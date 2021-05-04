@@ -9,14 +9,11 @@ endif
 " plugins (manager = vim-plug)
 call plug#begin('~/.vim/plugged')
 
-" Color sheme
-Plug 'morhetz/gruvbox'
+" Material theme
+Plug 'kaicataldo/material.vim', { 'branch': 'main'  }
 
 " go through files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" YouCompleteMe
-" Plug 'Valloric/YouCompleteMe'
 
 " autopairs
 Plug 'jiangmiao/auto-pairs'
@@ -24,14 +21,12 @@ Plug 'jiangmiao/auto-pairs'
 " easymotion
 Plug 'easymotion/vim-easymotion'
 
-" Snippets
-"Plug 'honza/vim-snippets' " doesn't work
 
 call plug#end()
 " prettify if &t_Co > 1 syntax enable
 
-colorscheme delek " my terminal does not support color schemes... ?
-colorscheme gruvbox
+colorscheme material
+let g:material_theme_style = 'default-community'
 set number
 set cursorline
 set bg=dark
@@ -44,12 +39,6 @@ set tabstop=4
 set showcmd
 set nowrap
 set hlsearch
-
-
-" I don't need a mouse :D
-"if has('mouse')
-"set mouse=a
-"endif
 
 
 " vim backup && swap files
@@ -70,4 +59,3 @@ set listchars=tab:>-,trail:- " replace tabs with --> and spaces with --
 " <CR> = enter
 map <C-n> <esc>:NERDTreeToggle<CR> 
 map <Leader> <Plug>(easymotion-prefix)
-" map <F5> <esc>:w<return><esc>:make\ main<%
