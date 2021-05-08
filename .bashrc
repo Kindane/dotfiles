@@ -139,13 +139,15 @@ ex ()
 }
 
 # some more aliases
+## useful ls-aliases
 alias lsa='ls -all'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias lsl='ls -l'
+## for russian layout
 alias сдуфк='clear'
 alias ды='ls'
+## lol
 alias celar='clear'
-alias please='sudo' # yey))
-# alias vim='nvim' # :D
+alias ..='cd ..'
