@@ -156,8 +156,8 @@ label =  %percentage_used%%
 type = internal/date
 interval = 1 
 
-date = %d.%m
-time = %H:%M:%S
+date = %d/%m/%Y
+time = %I:%M %p
 
 format-prefix-foreground = ${colors.foreground-alt}
 
