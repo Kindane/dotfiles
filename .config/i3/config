@@ -177,11 +177,14 @@ bindsym $mod+r mode "resize"
 # On startup
 exec --no-startup-id flameshot
 exec --no-startup-id telegram-desktop
+exec --no-startup-id konsole
 
 
 # Screenshots
-# bindsym Print exec flameshot gui
+bindsym Print exec flameshot gui
 
+# Shutdown PC
+bindsym $mod+Shift+s exec systemctl poweroff
 
 # Setting Alt + Shift to Switch Languages
 exec setxkbmap -option "grp:alt_shift_toggle" -layout "us, ru"
@@ -190,7 +193,7 @@ exec setxkbmap -option "grp:alt_shift_toggle" -layout "us, ru"
 exec xset r rate 200 40
 
 #Setting wallpaper
-exec_always feh --bg-scale /home/kindane/hentai/useful/zakat-za-gorami.jpg
+exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/zakat-za-gorami.jpg
 
 # Start Polybar on startup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
