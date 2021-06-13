@@ -1,5 +1,4 @@
 [colors]
-;background = ${xrdb:color0:#222}
 background = #151515
 background-alt = #272727
 foreground = #0377ad
@@ -186,6 +185,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
+
 [global/wm]
 margin-top = 0
 margin-bottom = 0

@@ -138,6 +138,8 @@ ex ()
   fi
 }
 
+export EDITOR="/usr/bin/vim"
+
 # some more aliases
 ## useful ls-aliases
 alias lsa='ls -all'
@@ -151,3 +153,9 @@ alias ды='ls'
 ## lol
 alias celar='clear'
 alias ..='cd ..'
+
+# run tmux on startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+

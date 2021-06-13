@@ -32,7 +32,7 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -theme Monokai -modi drun -show drun -show-icons -widht 50 -lines 25 -scroll-method 1
+bindsym $mod+d exec rofi -show run -theme dmenu
 
 # change focus
 bindsym $mod+$left focus left
@@ -192,7 +192,7 @@ exec setxkbmap -option "grp:alt_shift_toggle" -layout "us, ru"
 exec xset r rate 200 40
 
 #Setting wallpaper
-exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/arch.png
+exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/i3CheetSheet.png
 
 # Start Polybar on startup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
