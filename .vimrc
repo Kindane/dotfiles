@@ -9,8 +9,8 @@ endif
 " plugins (manager = vim-plug)
 call plug#begin('~/.vim/plugged')
 
-" Material theme
-Plug 'kaicataldo/material.vim', { 'branch': 'main'  }
+" Ayu theme
+Plug 'ayu-theme/ayu-vim'
 
 " go through files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -25,11 +25,12 @@ Plug 'easymotion/vim-easymotion'
 call plug#end()
 " prettify if &t_Co > 1 syntax enable
 
-colorscheme material
-let g:material_theme_style = 'default-community'
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
 set number
 set cursorline
-set bg=dark
 set autoindent
 set cindent shiftwidth=4
 set softtabstop=4
@@ -49,6 +50,8 @@ set nrformats-=octal
 " let g:mapleader=','
 
 filetype plugin on
+" set default assembler as FASM
+autocmd BufNew,BufRead *.asm set ft=nasm
 set ttimeout
 set ttimeoutlen=100
 set list
