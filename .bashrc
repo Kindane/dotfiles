@@ -80,21 +80,14 @@ if ${use_color} ; then
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
 else
-	if [[ ${EUID} == 0 ]] ; then
-		# show root@ when we don't have colors
-		PS1='\u@\h \w \$ '
-	else
 		PS1='\u@\h \w \$ '
 	fi
-fi
 
 unset use_color safe_term match_lhs sh
 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
 
 xhost +local:root > /dev/null 2>&1
 
@@ -142,11 +135,8 @@ export EDITOR="/usr/bin/vim"
 
 # some more aliases
 ## useful ls-aliases
-alias lsa='ls -all'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lsl='ls -l'
+alias lsa='ls -alAFh'
+alias l='ls -aACF'
 ## for russian layout
 alias сдуфк='clear'
 alias ды='ls'
