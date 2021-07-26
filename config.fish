@@ -1,4 +1,5 @@
 if status is-interactive
+set fish_greeting
 ## useful ls-aliases
 	alias lsa='ls -alAFh'
 	alias l='ls -aACF'
