@@ -29,6 +29,7 @@ set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
+set relativenumber
 set number
 set cursorline
 set autoindent

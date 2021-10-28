@@ -26,7 +26,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,31 +171,35 @@ bindsym $mod+r mode "resize"
 
 # On startup
 exec --no-startup-id flameshot
-exec --no-startup-id telegram-desktop
-exec --no-startup-id konsole
+#exec --no-startup-id telegram-desktop
+#exec --no-startup-id konsole
 
 
 # Screenshots
 bindsym Print exec flameshot gui
 
 # Lock Screen
-bindsym $mod+X exec i3lock -i /home/kindane/Desktop/hentai/useful/archKISS.png
+bindsym $mod+X exec i3lock -i /home/kindane/Desktop/hentai/useful/Cyberpunk-Neon.png
 
 # Shutdown PC
 bindsym $mod+Shift+s exec systemctl poweroff
 
 # Setting volume
-bindsym $mod+Shift+U exec amixer set Master playback 5+
-bindsym $mod+Shift+D exec amixer set Master playback 5-
+bindsym $mod+Shift+u exec amixer set Master playback 5+
+bindsym $mod+Shift+d exec amixer set Master playback 5-
 
 # Setting Alt + Shift to Switch Languages
-exec setxkbmap -option "grp:alt_shift_toggle" -layout "us, ru"
+#old
+#exec setxkbmap -option "grp:alt_shift_toggle" -layout "us, ru"
+
+exec_always --no-startup-id "setxkbmap -layout us,ru"
+exec_always --no-startup-id  "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Set keyboard delay and rate: delay = 200 ms, rate 40
-exec xset r rate 200 40
+exec_always --no-startup-id "xset r rate 200 40"
 
 #Setting wallpaper
-exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/archKISS.png
+exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/Kvartira_Stalkera_3440.jpg
 
 # Start Polybar on startup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

@@ -1,6 +1,8 @@
 #
 # ~/.bashrc
 #
+set -o vi
+xset b off
 
 [[ $- != *i* ]] && return
 
