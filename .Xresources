@@ -13,7 +13,9 @@ XTerm.termName: xterm-256color
 
 ! Fonts ====================================================
 ! set font and fontsize
-XTerm*faceName: Droid\ Sans\ Mono\ Nerd\ Font
+! XTerm*faceName: Droid\ Sans\ Mono\ Nerd\ Font
+! XTerm*faceName: FantasqueSansMono\ Nerd\ Font
+XTerm*faceName: DroidSansMono\ Nerd\ Font\ Mono
 XTerm*faceSize: 16
 
 ! VT Font Menu: Unreadable

@@ -99,14 +99,9 @@ complete -cf sudo
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
 # http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
-shopt -s checkwinsize
-
-shopt -s expand_aliases
-
 # export QT_SELECT=4
 
 # Enable history appending instead of overwriting.  #139609
-shopt -s histappend
 
 #
 # # ex - archive extractor
@@ -133,11 +128,30 @@ ex ()
   fi
 }
 
+randpasswd() {
+	date +%s | sha256sum | base64 | head -c $1 ; echo
+}
+
+schedule() {
+	local tmp="$OLDPWD"
+	cd ~/Desktop/school/timetable
+	python timetable.py
+	cd - > /dev/null
+	OLDPWD="$tmp"
+}
+
+cdc() {
+	mkdir -p $1
+	cd $1
+}
+
+
 export EDITOR="/usr/bin/vim"
 
 # some more aliases
 ## useful ls-aliases
 alias lsa='ls -alAFh'
+alias clsa='clear && lsa'
 alias l='ls -aACF'
 ## for russian layout
 alias сдуфк='clear'
@@ -145,6 +159,7 @@ alias ды='ls'
 ## lol
 alias celar='clear'
 alias ..='cd ..'
+alias copy='xclip -selection clipboard'
 
 # run tmux on startup
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
