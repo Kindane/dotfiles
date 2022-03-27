@@ -16,9 +16,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 " go through files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" autopairs
-Plug 'jiangmiao/auto-pairs'
-
 " easymotion
 Plug 'easymotion/vim-easymotion'
 
@@ -58,6 +55,7 @@ set showcmd
 set nowrap
 set hlsearch
 let g:airline_powerline_fonts = 1
+set encoding=UTF-8
 
 " vim backup && swap files
 "ActivateAddons vim-snippets snipmate

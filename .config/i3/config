@@ -178,7 +178,6 @@ bindsym $mod+r mode "resize"
 
 # On startup
 exec --no-startup-id flameshot
-exec --no-startup-id telegram-desktop
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
 
 # Screenshots
@@ -191,7 +190,7 @@ bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
 bindsym $mod+t exec telegram-desktop
 
 # Lock PC
-bindsym $mod+n exec i3lock -i /home/kindane/Desktop/hentai/useful/houses1920x1080.png
+bindsym $mod+n exec i3lock -i /home/kindane/Pictures/toska1920x1080.png
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer set Master playback 1%+ # increase
@@ -210,8 +209,5 @@ exec_always --no-startup-id  "setxkbmap -option 'grp:alt_shift_toggle'"
 # Set keyboard delay and rate: delay = 200 ms, rate 40
 exec_always --no-startup-id "xset r rate 200 40"
 
-#Setting wallpaper
-exec_always --no-startup-id feh --bg-scale /home/kindane/Desktop/hentai/useful/houses.jpg
-
 # Start Polybar on startup
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/hack/launch.sh
