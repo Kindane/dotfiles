@@ -87,7 +87,7 @@ else
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
+#alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
@@ -104,8 +104,8 @@ complete -cf sudo
 # Enable history appending instead of overwriting.  #139609
 
 #
-# # ex - archive extractor
-# # usage: ex <file>
+# ex - archive extractor
+# usage: ex <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -113,7 +113,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -140,6 +140,13 @@ schedule() {
 	OLDPWD="$tmp"
 }
 
+test_wifi() {
+	while true; do
+		ping -c3 google.com
+		sleep 3
+	done
+}
+
 cdc() {
 	mkdir -p $1
 	cd $1
@@ -147,10 +154,12 @@ cdc() {
 
 
 export EDITOR="/usr/bin/vim"
+HISTFILESIZE=2500
 
 # some more aliases
 ## useful ls-aliases
 alias lsa='ls -alAFh'
+alias lsl='ls -l'
 alias clsa='clear && lsa'
 alias l='ls -aACF'
 ## for russian layout
@@ -159,7 +168,12 @@ alias ды='ls'
 ## lol
 alias celar='clear'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias copy='xclip -selection clipboard'
+alias translate='python ~/code/python/translate.py'
+# fuck = sudo !!
+alias fuck='echo sudo $(history -p !!) && sudo $(history -p !!)'
 
 # run tmux on startup
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

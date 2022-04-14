@@ -203,7 +203,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 10%+ # increase
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # descrease
 
 # Setting Alt + Shift to Switch Languages
-exec_always --no-startup-id "setxkbmap -layout us,ru"
+exec_always --no-startup-id "setxkbmap -layout us,ru,ua"
 exec_always --no-startup-id  "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Set keyboard delay and rate: delay = 200 ms, rate 40
